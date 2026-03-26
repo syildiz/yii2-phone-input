@@ -30,7 +30,7 @@
         "url": "https://github.com/syildiz/yii2-phone-input"
     }],
     "require": {
-        "bower-asset/intl-tel-input": "^23",
+        "bower-asset/intl-tel-input": "dev-master",
         "giggsey/libphonenumber-for-php": "^8",
         "yiisoft/yii2": ">=2.0.1"
     }
