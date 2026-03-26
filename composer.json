@@ -1,5 +1,6 @@
 {
     "name": "syildiz/yii2-phone-input",
+    "version": "1.0.0",
     "description": "Yii2 International telephone numbers - Asset Bundle, Behavior, Validator, Widget",
     "keywords": [
         "yii2",
@@ -8,6 +9,7 @@
         "libphonenumber"
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "license": "BSD-3-Clause",
     "type": "yii2-extension",
     "homepage": "https://github.com/syildiz/yii2-phone-input",
