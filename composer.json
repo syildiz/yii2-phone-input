@@ -26,8 +26,8 @@
         }
     },
     "repositories": [{
-        "type": "composer",
-        "url": "https://asset-packagist.org"
+        "type": "vcs",
+        "url": "https://github.com/syildiz/yii2-phone-input"
     }],
     "require": {
         "bower-asset/intl-tel-input": "^23",
