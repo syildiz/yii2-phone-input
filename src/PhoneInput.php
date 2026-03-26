@@ -26,9 +26,10 @@ class PhoneInput extends InputWidget
     public function init()
     {
         parent::init();
-        PhoneInputAsset::register($this->view);
+        $asset = PhoneInputAsset::register($this->view);
         $id = ArrayHelper::getValue($this->options, 'id');
         $jsOptions = $this->jsOptions ? Json::encode($this->jsOptions) : "{}";
+        $utilsUrl = Json::encode($asset->baseUrl . '/build/js/utils.js');
         $jsInit = <<<JS
 (function ($) {
     "use strict";
@@ -37,6 +38,12 @@ class PhoneInput extends InputWidget
         return;
     }
     var options = $jsOptions || {};
+    if (!options.loadUtils) {
+        var utilsUrl = $utilsUrl;
+        options.loadUtils = function () {
+            return import(utilsUrl);
+        };
+    }
     input._iti = window.intlTelInput(input, options);
 })(jQuery);
 JS;
