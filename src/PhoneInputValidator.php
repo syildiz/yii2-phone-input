@@ -1,6 +1,6 @@
 <?php
 
-namespace borales\extensions\phoneInput;
+namespace syildiz\extensions\phoneInput;
 
 use libphonenumber\NumberParseException;
 use libphonenumber\PhoneNumberUtil;
@@ -11,7 +11,7 @@ use yii\helpers\Json;
 
 /**
  * Validates the given attribute value with the PhoneNumberUtil library.
- * @package borales\extensions\phoneInput
+ * @package syildiz\extensions\phoneInput
  */
 class PhoneInputValidator extends Validator
 {

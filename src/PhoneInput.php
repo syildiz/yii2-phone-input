@@ -1,6 +1,6 @@
 <?php
 
-namespace borales\extensions\phoneInput;
+namespace syildiz\extensions\phoneInput;
 
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -9,7 +9,7 @@ use yii\widgets\InputWidget;
 
 /**
  * Widget of the phone input
- * @package borales\extensions\phoneInput
+ * @package syildiz\extensions\phoneInput
  */
 class PhoneInput extends InputWidget
 {

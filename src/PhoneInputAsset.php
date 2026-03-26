@@ -1,12 +1,12 @@
 <?php
 
-namespace borales\extensions\phoneInput;
+namespace syildiz\extensions\phoneInput;
 
 use yii\web\AssetBundle;
 
 /**
  * Asset Bundle of the phone input widget. Registers required CSS and JS files.
- * @package borales\extensions\phoneInput
+ * @package syildiz\extensions\phoneInput
  */
 class PhoneInputAsset extends AssetBundle
 {
