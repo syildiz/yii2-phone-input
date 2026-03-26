@@ -31,7 +31,7 @@
     "require": {
         "giggsey/libphonenumber-for-php": "^8",
         "yiisoft/yii2": ">=2.0.1",
-        "jackocnr/intl-tel-input": "25.2.1"
+        "bower-asset/intl-tel-input": "25.2.1"
     },
     "config": {
         "allow-plugins": {

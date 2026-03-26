@@ -28,11 +28,16 @@ class PhoneInput extends InputWidget
         parent::init();
         PhoneInputAsset::register($this->view);
         $id = ArrayHelper::getValue($this->options, 'id');
-        $jsOptions = $this->jsOptions ? Json::encode($this->jsOptions) : "";
+        $jsOptions = $this->jsOptions ? Json::encode($this->jsOptions) : "{}";
         $jsInit = <<<JS
 (function ($) {
     "use strict";
-    $('#$id').intlTelInput($jsOptions);
+    var input = document.getElementById('$id');
+    if (!input || typeof window.intlTelInput !== 'function') {
+        return;
+    }
+    var options = $jsOptions || {};
+    input._iti = window.intlTelInput(input, options);
 })(jQuery);
 JS;
         $this->view->registerJs($jsInit);
@@ -43,9 +48,10 @@ JS;
     $('#$id')
     .parents('form')
     .on('submit', function() {
-        $('#$id')
-        .val($('#$id')
-        .intlTelInput('getNumber'));
+        var input = document.getElementById('$id');
+        if (input && input._iti) {
+            input.value = input._iti.getNumber();
+        }
     });
 })(jQuery);
 JS;

@@ -91,7 +91,9 @@ class PhoneInputValidator extends Validator
 var options = $options, telInput = $(attribute.input);;
 
 if($.trim(telInput.val())){
-    if(!telInput.intlTelInput("isValidNumber")){
+    var input = telInput.get(0);
+    var iti = input ? (input._iti || (window.intlTelInputGlobals && window.intlTelInputGlobals.getInstance(input))) : null;
+    if(iti && !iti.isValidNumber()){
         messages.push(options.message);
     }
 }
